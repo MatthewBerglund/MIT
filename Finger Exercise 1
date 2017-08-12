@@ -1,0 +1,77 @@
+# Messages to user to request values for x, y, z
+print('Enter three integers below to find the largest odd number among them!')
+
+print('Enter first number:'); x = input()
+print('Enter second number:'); y = input()
+print('Enter third number:'); z = input()
+
+# Convert x, y, z to integers x_int, y_int, z_int
+x_int = int(x)
+y_int = int(y)
+z_int = int(z)
+
+
+# Check if x_int, y_int, z_int are odd and find largest among them
+# Print results
+
+largest = 'is the largest odd number among the three numbers you entered.'
+
+# If all three numbers are odd
+if x_int%2 != 0 and y_int%2 != 0 and z_int%2 != 0:
+
+  if x_int > y_int and x_int > z_int:
+    print(x_int, largest)
+
+  elif y_int > z_int:
+    print(y_int, largest)
+
+  else:
+    print(z_int, largest)
+    
+    
+# If only x_int and y_int are odd     
+elif x_int%2 != 0 and y_int%2 != 0 and z_int%2 == 0:
+
+  if x_int > y_int:
+    print(x_int, largest)
+
+  else:
+    print(y_int, largest)
+    
+  
+# If only x_int and z_int are odd
+elif x_int%2 != 0 and y_int%2 == 0 and z_int%2 != 0:
+
+  if x_int > z_int:
+    print(x_int, largest)
+
+  else:
+    print(z_int, largest)
+    
+
+# If only y_int and z_int are odd
+elif x_int%2 == 0 and y_int%2 != 0 and z_int%2 != 0:
+
+  if y_int > z_int:
+    print(y_int, largest)
+
+  else:
+    print(z_int, largest)
+    
+
+# If only x_int is odd
+elif x_int%2 != 0 and y_int%2 == 0 and z_int%2 == 0:
+  print(x_int, largest)
+  
+# If only y_int is odd
+elif x_int%2 == 0 and y_int%2 != 0 and z_int%2 == 0:
+  print(y_int, largest)
+
+# If only z_int is odd
+elif x_int%2 == 0 and y_int%2 == 0 and z_int%2 != 0:
+  print(z_int, largest)
+  
+
+# If none of the numbers are odd
+else:
+  print('You did not enter any odd numbers.')
