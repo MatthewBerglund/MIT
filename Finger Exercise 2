@@ -1,0 +1,36 @@
+# Message to user to request ten integers
+print('Enter three integers below to find the largest odd number among them!')
+
+#Get integer values
+int1 = int(input("Enter integer 1:"))
+int2 = int(input("Enter integer 2:"))
+int3 = int(input("Enter integer 3:"))
+int4 = int(input("Enter integer 4:"))
+int5 = int(input("Enter integer 5:"))
+int6 = int(input("Enter integer 6:"))
+int7 = int(input("Enter integer 7:"))
+int8 = int(input("Enter integer 8:"))
+int9 = int(input("Enter integer 9:"))
+int10 = int(input("Enter integer 10:"))
+
+#Assign integer values to a list int_list
+int_list = [int1, int2, int3, int4, int5, int6, int7, int8, int9, int10]
+
+x = 0
+
+#Check indexes for even numbers and remove them
+while (x != len(int_list)):
+
+  if int_list[x] % 2 == 0:
+    del int_list[x]
+    
+  else:
+    x = x + 1
+
+#Check if list is empty
+if not int_list:
+  print("You did not enter any odd numbers.")
+
+#If list is not empty, print max value
+else:
+  print(str(max(int_list)) + str(" is the largest odd number you entered."))
