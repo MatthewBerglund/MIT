@@ -1,0 +1,28 @@
+# Finger exercise in Section 3.2 of Introduction to Computation and Programming Using Python
+# Description: Let s be a string that contains a sequence of decimal numbers
+#  separated by commas, e.g., s = '1.23,2.4,3.123'. Write a program that prints
+#  the sum of the numbers in s.
+
+
+# Get string of numbers from user
+s = input("Enter a series of numbers separated by commas (no spaces), then hit enter to find the sum:")
+mod_s = str()
+total = 0
+
+
+# For loop that runs through user string and adds anything to the modified string mod_s that is not a comma
+# By the time the loop hits a comma, mod_s contains the digits and decimals for one number in the list
+
+for x in s:
+    
+    if x != ",":                    # If x is not a comma
+      mod_s = mod_s + str(x)        # Convert x to string and add to mod_s
+
+    else:                           # If x is a comma
+      total = total + float(mod_s)  # Convert mod_s to float and add to total
+      mod_s = str()                 # Reset mod_s
+
+    print(mod_s)
+
+total = total + float(mod_s)        # Since the last character in the string s is not a comma, the for loop does not know to add mod_s to total one more time. Hence this line.
+print("Sum:", total)      
